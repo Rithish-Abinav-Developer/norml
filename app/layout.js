@@ -16,6 +16,12 @@ const zalandoSansExpanded = Zalando_Sans_Expanded({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "Norml | Experiences & campaigns that feel Norml",
+  description: "We design brands, experiences & campaigns that feel Norml",
+};
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
