@@ -11,7 +11,7 @@ export default function AnimatedHeading() {
     const mobile = window.innerWidth <= 500;
 
     document.querySelectorAll(".common_heading").forEach((heading) => {
-        console.log(heading)
+        // console.log(heading)
       const span = heading.querySelector("span");
       const text = span.innerText;
       span.innerHTML = ""; 
