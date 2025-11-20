@@ -610,6 +610,8 @@ footer .footer_1 .phone_email{
 @media screen and (max-width: 1200px) {
   .common_btn span{
     padding: 8px 16px;
+    font-size: 14px;
+    line-height: 20px;
   }
 
   footer{
@@ -804,8 +806,8 @@ footer .footer_links{
   }
   .hero_section .content h1,
   .common_heading {
-    font-size: 26px;
-    line-height: 34px;
+    font-size: 30px;
+    line-height: 38px;
   }
   .hero_section .content p,
   .prespective .content p {
