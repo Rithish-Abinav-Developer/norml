@@ -608,6 +608,9 @@ footer .footer_1 .phone_email{
 }
 
 @media screen and (max-width: 1200px) {
+  .common_btn span{
+    padding: 8px 16px;
+  }
 
   footer{
     padding: 50px 0 20px 0;
