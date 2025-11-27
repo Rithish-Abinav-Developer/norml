@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import RightArrow from '@/app/src/arrow-right.svg'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -19,6 +19,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedHeading from "./components/AnimatedHeading";
 import FooterCTA from "./components/FooterCTA";
+import FormPopup from "./components/FormPopup";
 
 
 export default function page() {
@@ -27,31 +28,38 @@ const shoe = useRef(null);
 const showLate = useRef(null);
 const shoeSection = useRef(null);
 
-useEffect(() => {
-  const desktop = window.innerWidth>1200;
-  gsap.registerPlugin(ScrollTrigger);
+  const [contactPopup, setContactPopup] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
 
-  if(desktop){
+  const openPopupWithService = (serviceName) => {
+    setSelectedService(serviceName);
+    setContactPopup(true);
+  };
+// useEffect(() => {
+//   const desktop = window.innerWidth>1200;
+//   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to([shoe.current,showLate.current], {
-    scale: 20,   
-    x: 50,            
-    scrollTrigger: {
-      trigger: shoeSection.current,
-      start: "top 00",     
-      end: "+=500",       
-      scrub: true,
-      onUpdate: (self) => {
-        if (self.progress >= 0.5) {
-          showLate.current.style.opacity = 1;
-        } else {
-          showLate.current.style.opacity = 0;
-        }
-      },
-    },
-  });
-}
-}, []);
+//   if(desktop){
+
+//   gsap.to([shoe.current,showLate.current], {
+//     scale: 20,   
+//     x: 50,            
+//     scrollTrigger: {
+//       trigger: shoeSection.current,
+//       start: "top 00",     
+//       end: "+=500",       
+//       scrub: true,
+//       onUpdate: (self) => {
+//         if (self.progress >= 0.5) {
+//           showLate.current.style.opacity = 1;
+//         } else {
+//           showLate.current.style.opacity = 0;
+//         }
+//       },
+//     },
+//   });
+// }
+// }, []);
 
 
 
@@ -69,7 +77,7 @@ useEffect(() => {
       We design brands, experiences & campaigns that <span>feel Norml.</span>
     </h1>
     <p data-aos="fade-up" data-aos-delay="250">At Norml, we believe great design should feel effortless. From shaping bold personal brands to building intuitive digital experiences and impactful campaigns, we help ideas cut through the noise. Rooted in Chennai and creating for the world, we craft work that doesn’t just look good — it feels right.</p>
-      <Link href="/" className='common_btn' data-aos="fade-up" data-aos-delay="500">
+      <Link href="/" className='common_btn' data-aos="fade-up" data-aos-delay="500" onClick={()=>setContactPopup(true)}>
       <span>
                       Get In Touch <Image src={RightArrow} alt="button icon" /> 
                       </span>
@@ -275,21 +283,32 @@ useEffect(() => {
   <div className='single_service wide' data-aos="fade-right" data-aos-delay="250">
     <Image src={service1} alt="service 1" />
     <div className='content'>
-      <h3>Branding & Identity</h3>
+      <h3>Podcasting</h3>
       <p>Harness the power of audio storytelling to connect with your audience. Our podcasting services cover everything from concept development to recording and editing. We help you craft engaging content that resonates, builds trust, and enhances your brand visibility.</p>
-        <Link href="/" className='common_btn'>
-      <span>Know More <Image src={RightArrow} alt="button icon" /> </span>
-       </Link>
+      <button
+                  onClick={() => openPopupWithService("Podcasting")}
+                  className="common_btn"
+                >
+                  <span>
+                    Know More <Image src={RightArrow} alt="button icon" />
+                  </span>
+                </button>
+
     </div>
   </div>
    <div className='single_service' data-aos="fade-left" data-aos-delay="500">
     <Image src={service2} alt="service 1" />
     <div className='content'>
-      <h3>Branding & Identity</h3>
+      <h3>Branding</h3>
       <p>Your brand is more than a logo — it's how people feel when they see you. At Norml, we craft bold and cohesive identities that reflect your values, voice, and vision. We help you show up consistently, across every touchpoint.</p>
-        <Link href="/" className='common_btn'>
-      <span>Know More <Image src={RightArrow} alt="button icon" /> </span>
-       </Link>
+            <button
+                  onClick={() => openPopupWithService("Branding")}
+                  className="common_btn"
+                >
+                  <span>
+                    Know More <Image src={RightArrow} alt="button icon" />
+                  </span>
+                </button>
     </div>
   </div>
 </div>
@@ -300,21 +319,31 @@ useEffect(() => {
      <div className='single_service' data-aos="fade-right" data-aos-delay="500">
     <Image src={service2} alt="service 1" />
     <div className='content'>
-      <h3>Branding & Identity</h3>
+      <h3>Branding</h3>
       <p>Your brand is more than a logo — it's how people feel when they see you. At Norml, we craft bold and cohesive identities that reflect your values, voice, and vision. We help you show up consistently, across every touchpoint.</p>
-        <Link href="/" className='common_btn'>
-      <span>Know More <Image src={RightArrow} alt="button icon" /> </span>
-       </Link>
+                   <button
+                  onClick={() => openPopupWithService("Branding")}
+                  className="common_btn"
+                >
+                  <span>
+                    Know More <Image src={RightArrow} alt="button icon" />
+                  </span>
+                </button>
     </div>
   </div>
   <div className='single_service wide' data-aos="fade-left" data-aos-delay="500">
     <Image src={service1} alt="service 1" />
     <div className='content'>
-      <h3>Branding & Identity</h3>
+      <h3>UI/UX Design</h3>
       <p>Harness the power of audio storytelling to connect with your audience. Our podcasting services cover everything from concept development to recording and editing. We help you craft engaging content that resonates, builds trust, and enhances your brand visibility.</p>
-        <Link href="/" className='common_btn'>
-      <span>Know More <Image src={RightArrow} alt="button icon" /> </span>
-       </Link>
+                 <button
+                  onClick={() => openPopupWithService("UI/UX Design")}
+                  className="common_btn"
+                >
+                  <span>
+                    Know More <Image src={RightArrow} alt="button icon" />
+                  </span>
+                </button>
     </div>
   </div>
 
@@ -326,21 +355,29 @@ useEffect(() => {
   <div className='single_service wide' data-aos="fade-right" data-aos-delay="500">
     <Image src={service1} alt="service 1" />
     <div className='content'>
-      <h3>Branding & Identity</h3>
+      <h3>Video production</h3>
       <p>Harness the power of audio storytelling to connect with your audience. Our podcasting services cover everything from concept development to recording and editing. We help you craft engaging content that resonates, builds trust, and enhances your brand visibility.</p>
-        <Link href="/" className='common_btn'>
-      <span>Know More <Image src={RightArrow} alt="button icon" /> </span>
-       </Link>
+                      <button
+                  onClick={() => openPopupWithService("Video production")}
+                  className="common_btn"
+                >
+                  <span>
+                    Know More <Image src={RightArrow} alt="button icon" />
+                  </span>
+                </button>
     </div>
   </div>
    <div className='single_service' data-aos="fade-left" data-aos-delay="500">
     <Image src={service2} alt="service 1" />
     <div className='content'>
-      <h3>Branding & Identity</h3>
+      <h3>Social media management</h3>
       <p>Your brand is more than a logo — it's how people feel when they see you. At Norml, we craft bold and cohesive identities that reflect your values, voice, and vision. We help you show up consistently, across every touchpoint.</p>
-        <Link href="/" className='common_btn'>
-      <span>Know More <Image src={RightArrow} alt="button icon" /> </span>
-       </Link>
+         <button
+  onClick={() => openPopupWithService("Video production")}
+  className="common_btn"
+>
+  <span>Know More <Image src={RightArrow} alt="button icon" /></span>
+</button>
     </div>
   </div>
 </div>
@@ -582,6 +619,17 @@ useEffect(() => {
 
   </div>
 </section>
+
+
+   {contactPopup && (
+  <FormPopup
+  setContactPopup={setContactPopup}
+  selectedService={selectedService}
+/>
+
+      )}
+
+
 
 <FooterCTA/>
   
