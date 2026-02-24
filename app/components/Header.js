@@ -35,14 +35,14 @@ export default function Header() {
             <nav ref={menuRef}>
                 <ul>
                     <li>
-                        <Link href="#about">
+                        <a href="#about">
                             About Us
-                        </Link>
+                        </a>
                     </li>
                      <li>
-                        <Link href="#services">
+                        <a href="#services">
                             Services
-                        </Link>
+                        </a>
                     </li>
                      {/* <li>
                         <Link href="/">
