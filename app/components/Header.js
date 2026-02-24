@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useRef, useState } from 'react'
 import Logo from "@/app/src/logo.svg"
@@ -6,6 +7,8 @@ import Image from 'next/image'
 import CallIcon from "@/app/src/call.svg"
 import closeIcon from "@/app/src/close.svg"
 import menuIcon from "@/app/src/menu.svg"
+import RightArrow from '@/app/src/arrow-right.svg'
+import FormPopup from './FormPopup';
 
 
 export default function Header() {
@@ -13,8 +16,16 @@ export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
     const menuRef = useRef(null);
 
+        const [contactPopup, setContactPopup] = useState(false);
+
   return (
     <header>
+      {contactPopup && (
+        <FormPopup
+        setContactPopup={setContactPopup}
+      />
+      
+            )}
         <div className="container">
             
             <Link href="/" className='logo'>
@@ -24,16 +35,16 @@ export default function Header() {
             <nav ref={menuRef}>
                 <ul>
                     <li>
-                        <Link href="/">
+                        <Link href="#about">
                             About Us
                         </Link>
                     </li>
                      <li>
-                        <Link href="/">
+                        <Link href="#services">
                             Services
                         </Link>
                     </li>
-                     <li>
+                     {/* <li>
                         <Link href="/">
                             Our Works
                         </Link>
@@ -52,15 +63,21 @@ export default function Header() {
                         <Link href="/">
                             Contact Us
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
 
-             <Link href="/" className='common_btn'>
-             <span>
+            
+
+
+
+                         <button className='common_btn' data-aos="fade-up" data-aos-delay="500" onClick={()=>setContactPopup(true)}>
+                                   <span>
                        <Image src={CallIcon} alt="call icon" /> <p>Get In Touch</p>
                        </span>
-                        </Link>
+                                   </button>
+
+
 
                         <button className='menu_btn' onClick={() => {
                             setShowMenu(!showMenu);

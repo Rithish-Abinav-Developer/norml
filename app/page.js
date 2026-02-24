@@ -244,7 +244,7 @@ const shoeSection = useRef(null);
 
   </div>
 
-  <section className='prespective common_section' ref={shoeSection}>
+  <section className='prespective common_section' ref={shoeSection} id="about">
     <div className='container'>
       <div className='content'>
         <h2 className='heading common_heading' data-aos="fade-up" data-aos-delay="0">
@@ -267,7 +267,7 @@ const shoeSection = useRef(null);
 
   </section>
 
-<section className='common_section services_section'>
+<section className='common_section services_section' id="services">
 <div className='container'>
 <div className='top_content'>
   <h2 className='heading common_heading' data-aos="fade-up" data-aos-delay="0">
