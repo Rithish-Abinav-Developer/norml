@@ -12,16 +12,13 @@ export default function Footer() {
 
         <div className='address'>
             <h3>Address</h3>
-            <p>20619 hrefrrence Chapel Rd<br/>
-Suite 116 #1040<br/>
-Cornelius, NC 28031<br/>
-United States</p>
+            <p>Olympia Cyberspace 21/22,<br/>Alandur Road, Reddy 2nd St,<br/>Arulayiammanpet, Guindy,<br/>Chennai, Tamil Nadu 600032</p>
         </div>
 
            <div className='phone_email'>
             <div>
             <h3>Phone Number</h3>
-           <a href='tel:1-800-201-1019'>1-800-201-1019</a>
+           <a href='tel:9003076837'>9003076837</a>
            </div>
            <div>
            <h3>Email</h3>

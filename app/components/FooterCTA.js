@@ -15,7 +15,7 @@ export default function FooterCta() {
         <div className='container'>
             <div className='content'>
                 <h2 className='common_heading heading'>Let’s <span>connect with us</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Have a project in mind or need expert support for your business? Our team is ready to help you with strategic solutions tailored to your goals. Get in touch with us today to discuss your requirements and explore how we can work together to achieve measurable results.</p>
                  <Link href="/" className='common_btn' data-aos="fade-up" data-aos-delay="500" onClick={()=>setContactPopup(true)}>
           <span>Know More <Image src={RightArrow} alt="button icon" /> </span>
            </Link>

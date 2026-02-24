@@ -500,13 +500,19 @@ transform: rotateY(10deg);
  justify-content: space-between;
    backface-visibility: hidden;
   transform-style: preserve-3d;
+  max-width: 1230px;
+
 }
 
 .why_choose .container .content{
-  width: 43%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.why_choose .container .img{
+  width: 50%;
 }
 
 
@@ -902,7 +908,7 @@ footer .footer_links{
     gap: 30px;
   }
   .why_choose .container .content,
-    .why_choose .container .image{
+    .why_choose .container .img{
     width: 100%;
   }
     .clients_section .clients_cards{

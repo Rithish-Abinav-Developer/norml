@@ -1,14 +1,9 @@
-"use client"
-import { useEffect } from "react";
-import Loader from "@/app/components/Loader";
 import { Zalando_Sans, Zalando_Sans_Expanded } from "next/font/google";
 import "./globals.css";
 import AosComponent from "@/app/components/Aos";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
-
-
+import LoaderWrapper from "./components/LoaderWrapper"; // NEW
 
 const zalandoSans = Zalando_Sans({
   variable: "--font-zalando-sans",
@@ -20,38 +15,24 @@ const zalandoSansExpanded = Zalando_Sans_Expanded({
   subsets: ["latin"],
 });
 
-// export const metadata = {
-//   title: "Norml | Experiences & campaigns that feel Norml",
-//   description: "We design brands, experiences & campaigns that feel Norml",
-// };
-
+export const metadata = {
+  title: 'Norml - Digital Marketing Agency',
+  description: 'Norml is a leading digital marketing agency helping brands grow online with SEO, social media, branding, and creative campaigns.',
+  verification: {
+    google: '77r3WTIxOZ64Y_QFqJmdkXHukexCmCwBGr3Zfx6R_sg',
+  },
+};
 
 export default function RootLayout({ children }) {
-
-   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000); // You can remove this if you want instant load
-  }, []);
-
   return (
-<html lang="en">
-  <body className={`${zalandoSans.variable} ${zalandoSansExpanded.variable}`}>
-    {loading ? (
-      <Loader />
-    ) : (
-      <>
-        <Header />
-        <AosComponent>
-          {children}
-        </AosComponent>
-        <Footer />
-      </>
-    )}
-  </body>
-</html>
-
+    <html lang="en">
+      <body className={`${zalandoSans.variable} ${zalandoSansExpanded.variable}`}>
+        <LoaderWrapper>
+          <Header />
+          <AosComponent>{children}</AosComponent>
+          <Footer />
+        </LoaderWrapper>
+      </body>
+    </html>
   );
 }

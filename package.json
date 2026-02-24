@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+      "export": "next export"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -17,6 +18,7 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "baseline-browser-mapping": "^2.8.32",
     "eslint": "^9",
     "eslint-config-next": "16.0.3"
   }
