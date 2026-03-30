@@ -1,14 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const djingo = localFont({
+  src: [
+    {
+      path: "../public/fonts/Djingo-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-djingo",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const helveticaNeue = localFont({
+  src: [
+    {
+      path: "../public/fonts/HelveticaNeue-Roman.ttf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-helvetica-neue",
 });
 
 export const metadata = {
@@ -18,8 +31,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${djingo.variable} ${helveticaNeue.variable}`}>
+      <body style={{ fontFamily: "var(--font-helvetica-neue)" }}>
+        <Header/>
+        {children}
+        
+        </body>
     </html>
   );
 }

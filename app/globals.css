@@ -1,49 +1,87 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
+:root{
+  --pageBgColor:#0E0E0E;
+  --beigeColor:#FFF6E8;
+}
+
+body{
+  background-color: var(--pageBgColor);
+  background-image: url('/images/page_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+  font-family: var(--font-helvetica-neue);
+  color: white;
+}
+
+.small_text{
+  font-size: 16px;
+  line-height: 24px;
+}
+
+p{
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.container{
+  width: 100%;
+  max-width: 1530px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.common_section .container{
+  border-bottom: solid #646464 1px;
+  padding: 120px 20px;
+
+}
+
+.link{
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.common_heading{
+    font-size: 80px;
+  line-height: 88px;
+  color: white;
+  font-weight: 400;
+}
+
+.common_btn{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  gap: 12px;
+  position: relative;
+  transition: 0.3s all;
+}
+
+.common_btn::before{
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 2px;
+  left: 0;
+  background-color: white;
+  bottom: -2px;
+  transition: 0.3s all;
+}
+
+.common_btn:hover{
+  transform: translateX(4px);
+}
+
+.common_btn:hover::before{
+  width: 100%;
 }

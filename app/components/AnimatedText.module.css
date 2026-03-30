@@ -1,0 +1,18 @@
+.animated_text {
+  display: block;
+}
+
+.word_parent {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  margin-right: 0.25em;
+}
+
+.word_parent :global(.word--element) {
+  display: inline-block;
+  transform: translate(0px, 110%);
+  opacity: 0;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.65s ease;
+}

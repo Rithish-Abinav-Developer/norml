@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Djingo';
+    src: url('Djingo-Regular.eot');
+    src: url('Djingo-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Djingo-Regular.woff2') format('woff2'),
+        url('Djingo-Regular.woff') format('woff'),
+        url('Djingo-Regular.ttf') format('truetype'),
+        url('Djingo-Regular.svg#Djingo-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
