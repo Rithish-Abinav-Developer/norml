@@ -11,3 +11,12 @@
     align-items: center;
     gap: 80px;
 }
+
+/* responsive */
+
+   /* laptop */
+@media (max-width:1530px) {
+   .nav ul{
+    gap: 40px;
+}
+}

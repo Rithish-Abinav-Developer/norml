@@ -7,12 +7,13 @@
 :root{
   --pageBgColor:#0E0E0E;
   --beigeColor:#FFF6E8;
+  --gray:#646464;
 }
 
 body{
   background-color: var(--pageBgColor);
   background-image: url('/images/page_bg.png');
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center;
   background-repeat: repeat-y;
   font-family: var(--font-helvetica-neue);
@@ -33,13 +34,11 @@ p{
   width: 100%;
   max-width: 1530px;
   margin: auto;
-  padding: 0 20px;
 }
 
 .common_section .container{
-  border-bottom: solid #646464 1px;
-  padding: 120px 20px;
-
+  border-bottom: solid #646464 2px;
+  padding: 120px 0;
 }
 
 .link{
@@ -52,10 +51,19 @@ p{
 }
 
 .common_heading{
-    font-size: 80px;
-  line-height: 88px;
+    font-size: 64px;
+  line-height: 72px;
   color: white;
   font-weight: 400;
+}
+
+.common_heading:not(.xl){
+ text-transform: uppercase;
+}
+
+.common_heading.xl{
+  font-size: 80px;
+  line-height: 88px;
 }
 
 .common_btn{
@@ -65,6 +73,9 @@ p{
   gap: 12px;
   position: relative;
   transition: 0.3s all;
+  text-transform: uppercase;
+  width: fit-content;
+  align-items: center;
 }
 
 .common_btn::before{
@@ -85,3 +96,64 @@ p{
 .common_btn:hover::before{
   width: 100%;
 }
+
+
+/* responsive */
+
+   /* laptop */
+   
+@media (max-width:1530px) {
+  .container{
+  padding: 0 20px;
+}
+.common_section .container{
+  padding: 80px 20px;
+}
+
+.common_heading.xl {
+    font-size: 60px;
+    line-height: 68px;
+}
+
+.common_heading {
+    font-size: 44px;
+    line-height: 52px;
+}
+
+.small_text{
+  font-size: 14px;
+  line-height: 22px;
+}
+
+p{
+  font-size: 24px;
+  line-height: 32px;
+}
+
+}
+
+
+   /* tablet */
+
+   @media (max-width:1200px) {
+        .common_section .container {
+        padding: 50px 20px;
+    }
+
+    .common_heading.xl {
+    font-size: 50px;
+    line-height: 58px;
+}
+
+.common_heading {
+    font-size: 34px;
+    line-height: 42px;
+}
+
+
+p{
+  font-size: 20px;
+  line-height: 28px;
+}
+
+   }
