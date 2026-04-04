@@ -1,0 +1,179 @@
+.hero_section{
+    padding-top: 120px;
+}
+
+.hero_title {
+    position: relative;
+    z-index: 6;
+}
+
+.hero_title h1{
+   font-family: var(--font-djingo);
+  font-size: 300px;
+  line-height: 280px;
+    color: var(--beigeColor);
+font-weight: 300;
+text-align: center;
+}
+
+.heroImage{
+    margin-top: -150px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: heroImage 0.25s forwards linear;
+    animation-delay: 0.5s;
+}
+.heroImage img{
+    width: 100%;
+    height: auto;
+}
+
+@keyframes heroImage {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about_container{
+    gap: 30px;
+}
+
+.ourTeam_container,
+.about_container{
+    display: flex;
+}
+
+.contentArea,
+.sideContent{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.contentArea{
+    align-items: flex-end;
+}
+
+.contentArea h2{
+    text-transform: unset !important;
+}
+
+.sideContent{
+    width: 50%;
+}
+
+.sideContent p{
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--gray);
+}
+
+.sideContent ul{
+    list-style: none;
+}
+
+.sideContent ul li span{
+   font-family: var(--font-djingo);
+font-size: 110px;
+line-height: 110px;
+color: var(--beigeColor);
+}
+
+.ourTeam_container .col1{
+    width: 20%;
+}
+
+.ourTeamTitle{
+    width: 35%;
+}
+
+.ourTeamContent{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+  /* responsive */
+
+   /* laptop */
+   @media (max-width:1530px){
+
+    .hero_title h1{
+  font-size: 200px;
+  line-height: 150px;
+}
+
+.hero_section{
+    padding-top: 70px;
+}
+
+.heroImage{
+    margin-top: -80px;
+}
+
+.contentArea,
+.sideContent{
+    gap: 50px;
+}
+
+.sideContent ul li span{
+font-size: 80px;
+line-height: 80px;
+}
+
+   }
+
+
+   /* tablet */
+   @media (max-width:1200px){
+.sideContent{
+    width: 80%;
+}
+   }
+
+   /* mobile */
+   @media (max-width:767px){
+
+       .hero_title h1{
+  font-size: 100px;
+  line-height: 70px;
+}
+
+.heroImage{
+    margin-top: -40px;
+}
+
+    .hero_section{
+    padding-top: 50px;
+}
+
+.sideContent{
+    width: 100%;
+}
+
+
+.ourTeam_container,
+.about_container{
+   flex-direction: column;
+   gap: 20px;
+}
+
+.contentArea,
+.sideContent{
+    gap: 20px;
+}
+
+.ourTeam_container .col1,
+.ourTeamTitle,
+.ourTeamContent{
+    width: 100%;
+}
+
+.sideContent ul li span{
+font-size: 60px;
+line-height: 68px;
+}
+
+   }

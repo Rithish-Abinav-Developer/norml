@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root{
@@ -97,6 +98,17 @@ p{
   width: 100%;
 }
 
+.page_transition {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.page_transition svg {
+  width: 100%;
+  height: 100%;
+}
 
 /* responsive */
 
@@ -136,6 +148,9 @@ p{
    /* tablet */
 
    @media (max-width:1200px) {
+    .desktop_break{
+      display: none;
+    }
         .common_section .container {
         padding: 50px 20px;
     }
@@ -154,6 +169,23 @@ p{
 p{
   font-size: 20px;
   line-height: 28px;
+}
+
+   }
+
+   /* mobile  */
+
+   @media (max-width:767px){
+
+    
+    .common_heading.xl {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.common_heading {
+    font-size: 28px;
+    line-height: 33px;
 }
 
    }

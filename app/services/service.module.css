@@ -1,0 +1,382 @@
+.hero_section{
+    padding-top: 120px;
+    position: relative;
+}
+
+.serviceContainer{
+  border-bottom: solid 1px var(--gray);
+  padding-bottom: 120px;
+}
+
+.arrow{
+    width: 121px;
+    position: absolute;
+    right: 74px;
+    bottom: 12px;
+}
+
+.arrow img{
+    width: 100%;
+    height: auto;
+}
+
+
+.hero_title h1{
+   font-family: var(--font-djingo);
+  font-size: 300px;
+  line-height: 280px;
+    color: var(--beigeColor);
+font-weight: 300;
+text-align: center;
+}
+
+.heroContent{
+    width: 75%;
+    margin-left: auto;
+    margin-top: 200px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.heroContent .col1{
+min-width:250px;
+display: flex;
+}
+
+.heroContent p{
+    text-transform: uppercase !important;
+}
+
+.serviceSection{
+    margin: 120px 0 0 0;
+}
+
+.seviceTabSection{
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    padding: 40px 0;
+    border-top: solid 1px rgba(255, 255, 255, 0.5);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+}
+
+.seviceTabSection span{
+    margin-left: auto;
+}
+
+.seviceTabSection button{
+    border: none;
+    background: none;
+    color: white;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.seviceTabSection button.activeTab{
+    border-bottom: solid 2px white;
+}
+
+.servicesLists{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.serviceColumn{
+    padding-top: 40px;
+    padding-bottom: 80px;
+    gap: 40px;
+    width: 50%;
+    position: relative;
+}
+
+
+
+.serviceColumn:not(:nth-last-child(-n+2)) {
+  border-bottom: solid 1px var(--gray);
+}
+
+
+
+.serviceColumn:nth-child(odd){
+    padding-right: 30px;
+}
+
+.serviceColumn:nth-child(even){
+    padding-left: 30px;
+}
+
+.serviceColumn:nth-child(odd)::before{
+    position: absolute;
+    content: "";
+    height: calc(100% - 80px);
+    width: 1px;
+    right: 0px;
+    background-color: var(--gray);
+    top: 40px;
+}
+
+.serviceColumn,
+.serviceColumn .overview,
+.serviceColumn  .cards .card,
+.allProjects .card{
+  display: flex;
+    flex-direction: column;
+}
+
+.serviceColumn,
+.serviceColumn .overview{
+    align-items: center;
+}
+
+.serviceColumn .overview{
+width: 95%;
+gap: 24px;
+}
+
+.serviceColumn .overview h2{
+      font-family: var(--font-djingo);
+  font-size: 120px;
+  line-height: 120px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.serviceColumn .overview p{
+    color: var(--gray);
+    text-align: center;
+}
+
+.serviceColumn  .cards{
+display: flex;
+gap: 30px;
+width: 100%;
+}
+
+.serviceColumn  .cards .card{
+    width: calc(50% - 15px);
+}
+
+.serviceColumn  .cards .card img{
+    width: 100%;
+    height: auto;
+}
+
+.serviceColumn  .cards .card,
+.allProjects .card{
+gap: 16px;
+}
+
+.serviceColumn  .cards .card,
+.serviceColumn  .cards .card a{
+transition: 0.3s all;
+}
+
+.serviceColumn  .cards .card:hover a{
+    transform: translateX(5px);
+}
+
+
+.allProjects{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    margin-top: 40px;
+}
+
+.allProjects .card{
+    width: calc(25% - 15px);
+}
+
+.allProjects .card>img{
+    width: 100%;
+    height: auto;
+}
+
+.allProjects .card h2{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 300;
+}
+
+
+  /* responsive */
+
+   /* laptop */
+   @media (max-width:1530px){
+
+    .hero_section{
+    padding-top: 70px;
+}
+.serviceSection{
+    margin: 70px 0 0 0;
+}
+
+.serviceContainer{
+  padding-bottom: 70px;
+}
+
+    .serviceColumn .overview{
+gap: 16px;
+}
+
+    .serviceColumn .overview h2{
+  font-size: 80px;
+  line-height: 80px;
+}
+
+    .heroContent{
+    margin-top: 120px;
+}
+
+.arrow {
+    width: 100px;
+    bottom: 12px;
+    right: unset;
+    left: 50px;
+}
+
+    .hero_section{
+    padding-top: 70px;
+}
+   .hero_title h1{
+  font-size: 200px;
+  line-height: 150px;
+}
+
+   }
+
+      /* tablet */
+   @media (max-width:1200px){
+
+    .allProjects .card{
+    width: calc(50% - 10px);
+}
+
+    .serviceColumn .overview{
+width: 100%;
+}
+
+    .serviceColumn .overview h2{
+  font-size: 60px;
+  line-height: 60px;
+}
+
+    .serviceColumn  .cards .card{
+    width: calc(50% - 10px);
+}
+
+    .serviceColumn  .cards{
+        gap: 20px;
+    }
+
+    .seviceTabSection{
+        padding: 20px 0;
+    }
+
+.serviceColumn{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    gap: 20px;
+}
+
+
+.serviceColumn:nth-child(odd){
+    padding-right: 20px;
+}
+
+.serviceColumn:nth-child(even){
+    padding-left: 20px;
+}
+
+.serviceColumn:nth-child(odd)::before{
+    height: calc(100% - 40px);
+    top: 20px;
+}
+
+    .heroContent{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.arrow{
+    display: none;
+}
+
+.hero_title h1{
+  font-size: 200px;
+  line-height: 150px;
+}
+
+
+}
+
+ /* mobile */
+   @media (max-width:767px){
+
+       .allProjects .card{
+    width: 100%;
+}
+
+    .serviceColumn  .cards{
+        flex-direction: column;
+    }
+
+    .serviceColumn  .cards .card{
+        width: 100%;
+    }
+
+    .serviceColumn:nth-child(odd)::before{
+   display: none;
+}
+
+    .serviceColumn{
+        width: 100%;
+        border: none !important;
+        border-bottom: solid var(--gray) 1px !important;
+        padding: 40px 0 !important;
+    }
+
+    .serviceColumn:last-child{
+        border-bottom: none !important;
+    }
+
+    .servicesLists{
+        flex-direction: column;
+    }
+
+    .seviceTabSection{
+        gap: 20px;
+    }
+
+    .serviceSection{
+    margin: 50px 0 0 0;
+}
+
+     .heroContent{
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        margin-top: 50px;
+     }
+
+        .hero_section{
+    padding-top: 50px;
+}
+
+.serviceContainer{
+  padding-bottom: 50px;
+}
+
+     .hero_title h1{
+  font-size: 100px;
+  line-height: 70px;
+}
+
+     .hero_section{
+    padding-top: 50px;
+}
+
+   }

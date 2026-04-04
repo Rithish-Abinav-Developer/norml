@@ -135,3 +135,36 @@ span{
 
 
    }
+
+
+   @media (max-width:767px){
+
+     .footerRow1,
+     .footerRow2{
+        gap: 30px;
+     }
+
+     footer .container{
+        gap: 50px;
+     }
+
+     .footerLinks div ul li a,
+     .footer_contact div span,
+.footer_contact div p{
+        font-size: 16px;
+        line-height: 24px;
+     }
+
+     .footer_contact{
+        gap: 24px;
+     }
+
+     .footer_contact div{
+        gap: 8px;
+     }
+
+     footer :global(.container){
+        gap: 50px;
+     }
+
+   }

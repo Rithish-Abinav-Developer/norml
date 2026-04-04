@@ -253,7 +253,7 @@ export default function Page() {
             <span>l</span>
             <span>.</span>
             </div>
-          <AnimatedText tag="p" delay={2000}
+          <AnimatedText tag="p" delay={850}
             text="In an industry full of 'noise' and 'hype' we're just norml. Built on clarity, guided by intent, and focused on work that delivers lasting value."
           />
         </div>
@@ -364,6 +364,12 @@ export default function Page() {
 <div className={style.topSection}>
 
   <div className={style.row}>
+     {mobile && 
+  <div className={style.col1}>
+               <p className='small_text'>FEATURED<br className='desktop_break'/>WORKS</p>
+
+  </div>
+  }
   <div className={style.col1}>
       <AnimatedText tag="h2" className="common_heading" text="What We Do" />
   </div>
@@ -376,10 +382,12 @@ export default function Page() {
   </div>
 
    <div className={style.row}>
+ {!mobile && 
   <div className={style.col1}>
                <p className='small_text'>FEATURED<br className='desktop_break'/>WORKS</p>
 
   </div>
+  }
    <div className={style.col2}>
  <AnimatedBtn delay={150}>
                   <Link className='common_btn' href="#">What we do <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
