@@ -239,6 +239,33 @@ export default function Page() {
     setBtnText('Drag');
   };
 
+  // — Touch handlers (mobile)
+  const handleTouchStart = (e) => {
+    isDragging.current = true;
+    dragStartX.current = e.touches[0].clientX;
+    setBtnText('Dragging');
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging.current) return;
+    const delta = e.touches[0].clientX - dragStartX.current;
+    dragStartX.current = e.touches[0].clientX;
+
+    const row1 = row1Ref.current;
+    const maxOffset = row1.scrollWidth - row1.parentElement.offsetWidth;
+
+    row1Offset.current = Math.min(0, Math.max(-maxOffset, row1Offset.current + delta));
+    row2Offset.current = Math.max(0, Math.min(maxOffset, row2Offset.current - delta));
+
+    row1Ref.current.style.transform = `translateX(${row1Offset.current}px)`;
+    row2Ref.current.style.transform = `translateX(${row2Offset.current}px)`;
+  };
+
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+    setBtnText('Drag');
+  };
+
   const logos = Array(10).fill(null);
 
   return (
@@ -333,6 +360,9 @@ export default function Page() {
           onMouseLeave={handleClientMouseLeave}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className={style.clients} ref={row1Ref}>
             {logos.map((_, i) => (

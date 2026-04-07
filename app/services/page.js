@@ -26,7 +26,7 @@ export default function page() {
             <div className={style.heroContent}>
                   <div className={style.col1}>
                  <p className='small_text'>ABOUT
-<br className='desktop_break'/>NORML/{allProjects.length}</p>
+<br/>NORML/{allProjects.length}</p>
 </div>
 
 <AnimatedText 
