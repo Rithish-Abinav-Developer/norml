@@ -266,7 +266,8 @@ export default function Page() {
     setBtnText('Drag');
   };
 
-  const logos = Array(10).fill(null);
+const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`);
+
 
   return (
     <>
@@ -364,21 +365,33 @@ export default function Page() {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <div className={style.clients} ref={row1Ref}>
-            {logos.map((_, i) => (
-              <div key={i}>
-                <Image src="/images/client_logo.svg" width={230} height={50} alt={`client ${i + 1}`} draggable={false} />
-              </div>
-            ))}
-          </div>
+         <div className={style.clients} ref={row1Ref}>
+  {logos.map((src, i) => (
+    <div key={i}>
+      <Image
+        src={src}
+        width={230}
+        height={100}
+        alt={`client ${i + 1}`}
+        draggable={false}
+      />
+    </div>
+  ))}
+</div>
 
           <div className={style.clients} ref={row2Ref}>
-            {logos.map((_, i) => (
-              <div key={i}>
-                <Image src="/images/client_logo.svg" width={230} height={50} alt={`client ${i + 1}`} draggable={false} />
-              </div>
-            ))}
-          </div>
+  {logos.map((src, i) => (
+    <div key={i}>
+      <Image
+        src={src}
+        width={230}
+        height={100}
+        alt={`client ${i + 1}`}
+        draggable={false}
+      />
+    </div>
+  ))}
+</div>
 
           <button ref={dragButtonRef}>
             {btnText}

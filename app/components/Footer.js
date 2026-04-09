@@ -25,7 +25,7 @@ If that sounds like you,</h2>
         <li> <Link href="/about">About us</Link> </li>
         <li> <Link href="/services">Services</Link> </li>
         <li> <Link href="/">Blogs</Link> </li>
-        <li> <Link href="/contact">Contact us</Link> </li>
+        <li> <Link href="/contact-us">Contact us</Link> </li>
 
     </ul>
    </div>
