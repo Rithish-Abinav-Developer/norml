@@ -8,7 +8,7 @@
 
 .popup{
     position: fixed;
-    z-index: 9999;
+    z-index: 99999999999;
     display: grid;
     place-items: center;
 }
@@ -31,6 +31,14 @@
     gap: 20px;
     backdrop-filter: blur(1px);
     border-radius: 8px;
+    transform: scale(0.9);
+    animation: popupContent 0.3s forwards;
+}
+
+@keyframes popupContent {
+    to{
+        transform: scale(1);
+    }
 }
 
 .popupContent h2{
@@ -86,6 +94,24 @@ line-height: 28px;
 
 .popupContent  form button img{
     filter: brightness(0);
+}
+
+/* success message */
+.successMsg {
+  font-size: 15px;
+  line-height: 24px;
+  color: #1a7a4a;
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* error message */
+.error {
+  display: block;
+  color: #e53e3e;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: -16px;
 }
 
 /* responsive */

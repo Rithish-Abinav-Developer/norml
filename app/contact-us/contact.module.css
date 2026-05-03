@@ -1,12 +1,13 @@
 
 
 .hero_title h1{
-   font-family: var(--font-djingo);
-  font-size: 300px;
-  line-height: 280px;
+   font-family: var(--font-league-spartan);
     color: var(--beigeColor);
-font-weight: 300;
-text-align: center;
+   letter-spacing: -5%;
+    text-align: center;
+    font-size: 190px;
+    font-weight: 700;
+    line-height: 180px;
 }
 
 .hero_container{
@@ -114,10 +115,6 @@ text-align: center;
     padding-top: 70px;
 }
 
-   .hero_title h1{
-  font-size: 200px;
-  line-height: 150px;
-}
 
 .hero_container:global(.container){
     padding: 0 0 70px 0;
@@ -155,8 +152,8 @@ text-align: center;
 }
 
     .hero_title h1{
-  font-size: 200px;
-  line-height: 150px;
+  font-size: 110px;
+  line-height: 100px;
 }
 
 .hero_container:global(.container){
@@ -178,8 +175,8 @@ text-align: center;
 }
 
     .hero_title h1{
-  font-size: 100px;
-  line-height: 70px;
+  font-size: 60px;
+  line-height: 50px;
 }
 
 .contact_image,

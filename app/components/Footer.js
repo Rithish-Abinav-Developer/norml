@@ -1,10 +1,17 @@
+"use client"
 import React from 'react'
 import styles from './Footer.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import AnimatedText from './AnimatedText'
+import { useRouter } from "next/navigation";
+
 
 export default function Footer() {
+
+const router = useRouter();
+
+
   return (
    <footer className='common_section' id={styles.footer}>
     <div className='container'>
@@ -14,8 +21,12 @@ export default function Footer() {
     <div className={styles.footerText}>
 <h2 className="common_heading">We enjoy working with people who care about what they build.<br></br>
 If that sounds like you,</h2>
-<AnimatedText tag="h2" className="common_heading" text="let's start a conversation." />
-</div>
+<AnimatedText
+  tag="h2"
+  onClick={() => router.push("/contact-us")}
+  className={`common_heading ${styles.contact_link}`}
+  text="Let's start a conversation."
+/></div>
 
 <div className={styles.footerLinks}>
 
@@ -24,7 +35,7 @@ If that sounds like you,</h2>
         <li> <Link href="/">Home</Link> </li>
         <li> <Link href="/about">About us</Link> </li>
         <li> <Link href="/services">Services</Link> </li>
-        <li> <Link href="/">Blogs</Link> </li>
+        <li> <Link href="/blog">Blogs</Link> </li>
         <li> <Link href="/contact-us">Contact us</Link> </li>
 
     </ul>
@@ -51,25 +62,16 @@ If that sounds like you,</h2>
 </Link>
     </div>
 
-     <AnimatedText tag="div" className={styles.footer_bottom_links} text="Privacy policy | Terms and conditions" />
 
-    <div className={styles.footer_contact}>
-        <div className={styles.address}>
-            <AnimatedText tag="span" text="Address" />
-            <p>20619 Torrence Chapel Rd<br/>
-Suite 116 #1040,Cornelius, NC 28031</p>
-        </div>
+<div className={styles.info}>
+    <ul>
+        <li> <a href='mailto:support@norml.com'>support@norml.com</a> </li>
+        <li> <a href='tel:18002011019'>1-800-201-1019</a> </li>
+        <li> <a href='#'>privacy policy</a> </li>
+        <li> <a href='#'>terms and conditions</a> </li>
+    </ul>
+</div>
 
-         <div className={styles.phone}>
-            <AnimatedText tag="span" text="Phone Number" />
-            <AnimatedText tag="p" text="1-800-201-1019" />
-        </div>
-
-         <div className={styles.email}>
-            <AnimatedText tag="span" text="Email Address" />
-            <AnimatedText tag="p" text="support@norml.com" />
-        </div>
-    </div>
 
 </div>
 

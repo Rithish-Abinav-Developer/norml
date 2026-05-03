@@ -1,26 +1,26 @@
 const WhatWeDoData = [
 {
     image:"/images/wd1.png",
-    title:"Lorem ipsum dolor sit amet,",
-    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+    title:"Branding ",
+    description:"We craft strong, memorable brand identities that connect with your audience and build lasting recognition.",
     tag:"webiste"
 },
 {
     image:"/images/wd2.png",
-    title:"Lorem ipsum dolor sit amet,",
-    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+    title:"SEO/GEO",
+    description:"We optimize your online presence to improve search rankings and drive targeted traffic to your business.",
     tag:"webiste"
 },
 {
     image:"/images/wd3.png",
-    title:"Lorem ipsum dolor sit amet,",
-    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+    title:"Video production",
+    description:"We create engaging, high-quality videos that tell your story and capture your audience’s attention.",
     tag:"webiste"
 },
 {
     image:"/images/wd4.png",
-    title:"Lorem ipsum dolor sit amet,",
-    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+    title:"UI/UX",
+    description:"We design intuitive and user-friendly experiences that enhance usability and keep users engaged.",
     tag:"webiste"
 },
 

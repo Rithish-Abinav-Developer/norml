@@ -5,6 +5,10 @@
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 :root{
   --pageBgColor:#0E0E0E;
   --beigeColor:#FFF6E8;
@@ -19,7 +23,71 @@ body{
   background-repeat: repeat-y;
   font-family: var(--font-helvetica-neue);
   color: white;
+  position: relative;
 }
+
+.noise-bg, .noise-bg:before {
+    position: fixed;
+    pointer-events: none;
+}
+
+.noise-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999999;
+}
+
+.noise-bg::before{
+    content: "";
+    top: -10rem;
+    left: -10rem;
+    width: calc(100% + 20rem);
+    height: calc(100% + 20rem);
+    z-index: 9999;
+    background-image: url("/images/noise.png");
+    opacity: .85;
+-webkit-animation: noise 1s steps(2) infinite;
+    animation: noise 1s steps(2) infinite;
+}
+
+@keyframes noise {
+  0% {
+    transform: translate3d(0, 9rem, 0);
+}
+10% {
+    transform: translate3d(-1rem, -4rem, 0);
+}
+20% {
+    transform: translate3d(-8rem, 2rem, 0);
+}
+30% {
+    transform: translate3d(9rem, -9rem, 0);
+}
+40% {
+    transform: translate3d(-2rem, 7rem, 0);
+}
+50% {
+    transform: translate3d(-9rem, -4rem, 0);
+}
+60% {
+    transform: translate3d(2rem, 6rem, 0);
+}
+70% {
+    transform: translate3d(7rem, -8rem, 0);
+}
+80% {
+    transform: translate3d(-9rem, 1rem, 0);
+}
+90% {
+    transform: translate3d(6rem, -5rem, 0);
+}
+100% {
+    transform: translate3d(-7rem, 0, 0);
+}
+}
+
 
 .small_text{
   font-size: 16px;
@@ -29,6 +97,12 @@ body{
 p{
   font-size: 32px;
   line-height: 40px;
+}
+
+.stroke_text{
+   color: transparent !important;
+  -webkit-text-stroke: 2px white;
+
 }
 
 .container{
@@ -89,19 +163,21 @@ p{
   position: absolute;
   content: '';
   width: 0%;
-  height: 2px;
-  left: 0;
+  height: 1px;
+  right: 0;
   background-color: white;
   bottom: -2px;
-  transition: 0.3s all;
+  transition: 0.3s ease-in-out;
 }
 
 .common_btn:hover{
   transform: translateX(4px);
+  left: 0;
 }
 
 .common_btn:hover::before{
   width: 100%;
+  left: 0;
 }
 
 .page_transition {
@@ -114,6 +190,27 @@ p{
 .page_transition svg {
   width: 100%;
   height: 100%;
+}
+
+
+header.show{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transform: translateY(-86px);
+    animation: showHeader 0.3s ease-in-out forwards;
+}
+
+@keyframes showHeader {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body:has(header.show){
+  padding-top: 86px;
 }
 
 /* responsive */

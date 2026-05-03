@@ -22,12 +22,13 @@
 
 
 .hero_title h1{
-   font-family: var(--font-djingo);
-  font-size: 300px;
-  line-height: 280px;
+   font-family: var(--font-league-spartan);
     color: var(--beigeColor);
-font-weight: 300;
-text-align: center;
+    letter-spacing: -5%;
+    text-align: center;
+    font-size: 190px;
+    font-weight: 700;
+    line-height: 180px;
 }
 
 .heroContent{
@@ -137,9 +138,10 @@ gap: 24px;
 }
 
 .serviceColumn .overview h2{
-      font-family: var(--font-djingo);
-  font-size: 120px;
-  line-height: 120px;
+      font-family: var(--font-league-spartan);
+  font-size: 60px;
+  line-height: 50px;
+  letter-spacing: -5%;
   text-align: center;
   font-weight: 300;
 }
@@ -222,9 +224,9 @@ transition: 0.3s all;
 gap: 16px;
 }
 
-    .serviceColumn .overview h2{
-  font-size: 80px;
-  line-height: 80px;
+     .serviceColumn .overview h2{
+  font-size: 50px;
+  line-height: 50px;
 }
 
     .heroContent{
@@ -239,10 +241,6 @@ gap: 16px;
 }
 
 
-   .hero_title h1{
-  font-size: 200px;
-  line-height: 150px;
-}
 
    }
 
@@ -258,8 +256,8 @@ width: 100%;
 }
 
     .serviceColumn .overview h2{
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 30px;
+  line-height: 30px;
 }
 
     .serviceColumn  .cards .card{
@@ -304,8 +302,8 @@ width: 100%;
 }
 
 .hero_title h1{
-  font-size: 200px;
-  line-height: 150px;
+  font-size: 110px;
+  line-height: 100px;
 }
 
 
@@ -369,8 +367,8 @@ width: 100%;
 }
 
      .hero_title h1{
-  font-size: 100px;
-  line-height: 70px;
+  font-size: 60px;
+  line-height: 50px;
 }
 
 

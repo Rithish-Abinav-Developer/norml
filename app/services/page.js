@@ -116,7 +116,7 @@ export default function page() {
 
                 <AnimatedBtn delay={0}>
                   <Link className='common_btn' href={item.slug}>
-                    About Us
+                    Explore More
                     <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' />
                   </Link>
                 </AnimatedBtn>

@@ -23,7 +23,7 @@ No test suite is configured.
 
 ## Architecture
 
-`app/layout.js` is the root layout: loads two local fonts (`Djingo` as `--font-djingo`, `Helvetica Neue` as `--font-helvetica-neue`), and wraps all pages with `<Header>` and `<Footer>`.
+`app/layout.js` is the root layout: loads two local fonts (`Djingo` as `--font-league-spartan`, `Helvetica Neue` as `--font-helvetica-neue`), and wraps all pages with `<Header>` and `<Footer>`.
 
 `app/page.js` is the single homepage — a `"use client"` component with several interactive sections:
 - **Reels**: custom-cursor button that follows mouse via `requestAnimationFrame` lerp; toggles a `<video>` play/pause

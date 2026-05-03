@@ -42,6 +42,7 @@ export default function Page() {
   const dragStartX = useRef(0);
   const row1Offset = useRef(0);
   const row2Offset = useRef(0);
+  const autoScrollDir = useRef(-1);
   const [btnText, setBtnText] = useState('Drag');
   const [mobile,setMobile] = useState(false);
 
@@ -106,6 +107,27 @@ export default function Page() {
         dragButtonRef.current.style.left = `${clientCurrent.current.x}px`;
         dragButtonRef.current.style.top = `${clientCurrent.current.y}px`;
       }
+
+      if (!isDragging.current && row1Ref.current && row2Ref.current) {
+        const autoSpeed = 0.5;
+        const maxOffset = row1Ref.current.scrollWidth - row1Ref.current.parentElement.offsetWidth;
+
+        row1Offset.current += autoSpeed * autoScrollDir.current;
+        row2Offset.current -= autoSpeed * autoScrollDir.current;
+
+        row1Offset.current = Math.min(0, Math.max(-maxOffset, row1Offset.current));
+        row2Offset.current = Math.max(0, Math.min(maxOffset, row2Offset.current));
+
+        if (row1Offset.current <= -maxOffset) {
+          autoScrollDir.current = 1;
+        } else if (row1Offset.current >= 0) {
+          autoScrollDir.current = -1;
+        }
+
+        row1Ref.current.style.transform = `translateX(${row1Offset.current}px)`;
+        row2Ref.current.style.transform = `translateX(${row2Offset.current}px)`;
+      }
+
       clientRafRef.current = requestAnimationFrame(animate);
     };
 
@@ -280,19 +302,20 @@ const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`)
             <span>m</span>
             <span>l</span>
             <span>.</span>
+
             </div>
           <AnimatedText tag="p" delay={850}
-            text="In an industry full of 'noise' and 'hype' we're just norml. Built on clarity, guided by intent, and focused on work that delivers lasting value."
+            text="In an industry full of noise and hype, we choose to stay norml. Built on clarity, guided by intent, and focused on delivering lasting value through thoughtful creativity, branding strategy, and leading branding companies level digital execution"
           />
         </div>
       </section>
 
-      <section className={style.scroll_arrow}>
+      <a href='#reel' className={style.scroll_arrow}>
         <Image src="/images/scroll_arrow.svg" width={45} height={45} alt="scroll arrow" />
-      </section>
+      </a>
 
       <section className={`common_section`}>
-        <div className='container'>
+        <div className='container' id='reel'>
           <div
             className={style.reels_video}
             ref={reelsRef}
@@ -336,10 +359,10 @@ const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`)
               />
               <div className={style.buttons}>
                 <AnimatedBtn delay={0}>
-                  <Link className='common_btn' href="#">About Us <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
+                  <Link className='common_btn' href="/about">About Us <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
                 </AnimatedBtn>
                 <AnimatedBtn delay={150}>
-                  <Link className='common_btn' href="#">What we do <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
+                  <Link className='common_btn' href="/services">What we do <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
                 </AnimatedBtn>
               </div>
             </div>
@@ -350,7 +373,7 @@ const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`)
       <section className={`common_section ${style.growing_section}`}>
         <div className={`container ${style.growing_container}`}>
           <AnimatedText tag="h2" className="common_heading" text="People growing with us" />
-          <AnimatedText tag="p" className="small_text" text="Lorem ipsum dolor sit amet" />
+          <AnimatedText tag="p" className="small_text" text="Delivering digital growth" />
         </div>
 
         <div
@@ -366,21 +389,24 @@ const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`)
           onTouchEnd={handleTouchEnd}
         >
          <div className={style.clients} ref={row1Ref}>
-  {logos.map((src, i) => (
-    <div key={i}>
-      <Image
-        src={src}
-        width={230}
-        height={100}
-        alt={`client ${i + 1}`}
-        draggable={false}
-      />
-    </div>
-  ))}
+  {logos.slice(0, Math.ceil(logos.length / 2)).map((src, i) => (
+  <div key={i}>
+    <Image
+      src={src}
+      width={230}
+      height={100}
+      alt={`client ${i + 1}`}
+      draggable={false}
+    />
+  </div>
+))}
 </div>
 
           <div className={style.clients} ref={row2Ref}>
-  {logos.map((src, i) => (
+{logos
+  .slice(Math.ceil(logos.length / 2))
+  .reverse()
+  .map((src, i) => (
     <div key={i}>
       <Image
         src={src}
@@ -390,7 +416,7 @@ const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`)
         draggable={false}
       />
     </div>
-  ))}
+))}
 </div>
 
           <button ref={dragButtonRef}>
@@ -433,7 +459,7 @@ const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`)
   }
    <div className={style.col2}>
  <AnimatedBtn delay={150}>
-                  <Link className='common_btn' href="#">What we do <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
+                  <Link className='common_btn' href="/services">What we do <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
                 </AnimatedBtn>
                   </div>
 
@@ -469,11 +495,11 @@ const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`)
                  <p className='small_text'>FEATURED<br className='desktop_break'/>WORKS</p>
 </div>
  <div className={style.col2}>
-      <AnimatedText tag="h2" className="common_heading" text="News & Updates" />
+      <AnimatedText tag="h2" className="common_heading" text="Blogs" />
   </div>
    <div className={style.col3}>
         <AnimatedBtn delay={150}>
-                  <Link className='common_btn' href="#">View all Blog <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
+                  <Link className='common_btn' href="/blog">View all Blog <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
                 </AnimatedBtn>
   </div>
   </div>
@@ -488,10 +514,11 @@ const logos = Array.from({ length: 26 }, (_, i) => `/images/client${i + 1}.png`)
 <div className={style.card_content}>
    <AnimatedText tag="h3" className="" text={item.title} />
    <div>
-        <AnimatedText tag="p" className="small_text" text={item.date} />
-<AnimatedBtn delay={150}>
-                  <Link className='common_btn' href="#">What we do <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
+    <AnimatedBtn delay={150}>
+                  <Link className='common_btn' href={item.slug}>Read More <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' /></Link>
                 </AnimatedBtn>
+        <AnimatedText tag="p" className={`small_text ${style.post_date}`} text={item.date} />
+
    </div>
 </div>
 

@@ -3,16 +3,23 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LenisProvider from "./components/LenisProvider";
+import { League_Spartan } from "next/font/google";
 
-const djingo = localFont({
-  src: [
-    {
-      path: "../public/fonts/Djingo-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
-  variable: "--font-djingo",
+// const djingo = localFont({
+//   src: [
+//     {
+//       path: "../public/fonts/Djingo-Regular.ttf",
+//       weight: "400",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-league-spartan",
+// });
+
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-league-spartan",
 });
 
 const helveticaNeue = localFont({
@@ -33,8 +40,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${djingo.variable} ${helveticaNeue.variable}`}>
+    <html lang="en" className={`${leagueSpartan.variable} ${helveticaNeue.variable}`}>
       <body style={{ fontFamily: "var(--font-helvetica-neue)" }}>
+        <div className="noise-bg"></div>
         <LenisProvider>
         <Header/>
         {children}

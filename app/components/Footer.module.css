@@ -13,7 +13,6 @@ footer :global(.container){
 .footerRow1{
     display: flex;
     justify-content: space-between;
-    width: 83%;
     margin: auto;
 }
 
@@ -31,7 +30,7 @@ footer :global(.container){
 
 .footerLinks{
     display: flex;
-    width: 30%;
+    width:22%;
     justify-content: space-between;
 }
 
@@ -42,59 +41,102 @@ footer :global(.container){
 .footerLinks div ul{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 10px;
     list-style: none;
 }
 
 .footerLinks div ul li a{
-    text-transform: uppercase;
     font-size: 20px;
     line-height: 28px;
     color: white;
     text-decoration: none;
+    position: relative;
+}
+
+.footerLinks div ul li a::before,
+.contact_link::before{
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 0%;
+    background-color: white;
+    transition: 0.3s all;
+}
+
+.footerLinks div ul li a:hover::before,
+.contact_link:hover::before{
+    width: 100%;
+    left: 0;
 }
 
 .footerRow2{
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
 }
 
-.footer_logo,
-.footer_bottom_links,
-.footer_contact{
+.footer_logo{
     width: 33.33%;
 }
 
-.footer_contact{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px 0;
+.footerRow2 .info{
+    margin-right: 150px;
 }
 
-.footer_contact div{
+
+.footerRow2 .info ul{
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    width: 50%;
+    gap: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.footer_contact div.address{
-    width: 90%;
-}
-
-.footer_contact div span,
-.footer_contact div p{
-    font-size: 20px;
-    line-height: 28px;
-}
-
-.footer_contact div>
-span{
+.footerRow2 .info ul a{
+    color: white;
+    text-decoration: none;
     text-transform: uppercase;
+    font-size: 14px;
+    line-height: 22px;
+    transition: 0.3s all;
+    display: block;
 }
+
+.footerRow2 .info ul li:hover a{
+    opacity: 1 !important;
+    transform: translateX(3px);
+}
+
+.footerRow2 .info ul li:nth-child(3){
+    margin-top: 16px;
+}
+
+.footerRow2 .info ul li:nth-child(3) a,
+.footerRow2 .info ul li:nth-child(4) a{
+    opacity: 0.5;
+}
+
+
+.contact_link{
+    cursor: pointer;
+    transition: 0.3s all ;
+    width: fit-content;
+    position: relative;
+}
+
 
    /* responsive */
+
+   /* laptop */
+
+@media (max-width:1530px) {
+    .footerRow2 .info{
+    margin-right: 0px;
+}
+}
+
 
    /* tablet */
    @media (max-width:1200px){
@@ -120,24 +162,17 @@ span{
     gap: 50px;
 }
 
-.footer_contact div,
-.footer_contact div.address{
-    width: 100%;
-}
 
-.footer_logo,
-.footer_bottom_links,
-.footer_contact,
-.footerText{
-    width:100%;
-    max-width: 550px;
-}
 
 
    }
 
 
    @media (max-width:767px){
+
+    .footerText{
+    width: 100%;
+}
 
      .footerRow1,
      .footerRow2{
@@ -148,20 +183,11 @@ span{
         gap: 50px;
      }
 
-     .footerLinks div ul li a,
-     .footer_contact div span,
-.footer_contact div p{
+     .footerLinks div ul li a{
         font-size: 16px;
         line-height: 24px;
      }
 
-     .footer_contact{
-        gap: 24px;
-     }
-
-     .footer_contact div{
-        gap: 8px;
-     }
 
      footer :global(.container){
         gap: 50px;

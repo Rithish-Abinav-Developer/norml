@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react'
 import style from './AnimatedText.module.css'
 
-export default function AnimatedText({ text, tag = 'p', className = '', delay = 0 }) {
+export default function AnimatedText({ text, tag = 'p', className = '', delay = 0,  ...props }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function AnimatedText({ text, tag = 'p', className = '', delay = 
   const Tag = tag;
 
   return (
-    <Tag ref={containerRef} className={`${style.animated_text} ${className}`}>
+    <Tag ref={containerRef} className={`${style.animated_text} ${className}`} {...props}>
       {words.map((word, i) => (
         <span key={i} className={`${style.word_parent}`}>
           <span className="word--element">{word}</span>

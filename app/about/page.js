@@ -13,7 +13,7 @@ export default function page() {
            <>
   <AnimatedText tag="h1" text="people. culture." />
   <br className="desktop_break" />
-  <AnimatedText tag="h1" text="results." />
+  <AnimatedText tag="h1" className='stroke_text' text="results." />
 </>
             </div>
             <div className={style.heroImage}>
