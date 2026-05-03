@@ -14,6 +14,13 @@ const router = useRouter();
 
   return (
    <footer className='common_section' id={styles.footer}>
+
+{/* scroll to top */}
+
+<a href='#' className={styles.scroll_to_top}>
+    <Image src='/images/scroll-to-top.svg' width={30} height={30} alt='scroll to top'/>
+</a>
+
     <div className='container'>
 
 <div className={styles.footerRow1}>

@@ -156,6 +156,9 @@ justify-content: space-between;
 
    /* mobile */
    @media (max-width:767px){
+.small_text{
+    left: 20px;
+}
 
 
 .news_cards{
