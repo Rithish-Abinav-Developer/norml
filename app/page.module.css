@@ -118,6 +118,7 @@ text-align: center;
   transition: opacity 0.3s ease, transform 0.3s ease;
   border: none;
   outline: none;
+  color: white;
 }
 
 .reels_content_area{
