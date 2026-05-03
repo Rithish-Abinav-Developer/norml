@@ -208,9 +208,9 @@ letter-spacing: -4%;
     width: 80%;
     position: absolute;
     left: 10%;
-    bottom: 30px;
+    bottom: 150px;
     height: auto;
-    transform: translateY(150px);
+    transform: translateY(350px);
     animation: showMenuLogo forwards 0.5s ease-in-out;
     animation-delay: 1.5s;
 }
