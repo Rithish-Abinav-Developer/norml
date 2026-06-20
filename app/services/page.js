@@ -6,15 +6,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import AnimatedBtn from '../components/AnimatedBtn'
 import ServicesData from '../data/ServicesData'
+import Popup from '../components/Popup'
 
 
 export default function page() {
+
+   const [popupOpen, setPopupOpen] = useState(false); 
 
     const [activeTab, setActiveTab] = useState("services");
      const allProjects = ServicesData.flatMap(service => service.servicesList);
 
   return (
     <>
+
+  <Popup popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
+
      <section className={style.hero_section}>
         <a className={style.arrow} href='#'> <Image src="/images/service_arrow.svg" alt="arrow" width={121} height={121} /> </a>
          <div className={`container ${style.hero_container}`}>
@@ -76,12 +82,12 @@ export default function page() {
                   <AnimatedText tag="h2" text={service.service} />
                   <AnimatedText tag="p" text={service.content} />
 
-                  <AnimatedBtn delay={0}>
+                  {/* <AnimatedBtn delay={0}>
                     <Link className='common_btn' href="#">
                       Explore More
                       <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' />
                     </Link>
-                  </AnimatedBtn>
+                  </AnimatedBtn> */}
                 </div>
 
                 <div className={style.cards}>
@@ -91,11 +97,18 @@ export default function page() {
                       <div key={idx} className={style.card}>
                         <Image src={item.image} width={360} height={360} alt='' />
 
-                        <AnimatedBtn delay={150 + idx * 100}>
+                        {/* <AnimatedBtn delay={150 + idx * 100}>
                           <Link className='common_btn' href={item.slug}>
                             Explore More
                           </Link>
-                        </AnimatedBtn>
+                        </AnimatedBtn> */}
+
+                        <AnimatedBtn delay={150 + idx * 100}>
+                  <button className='common_btn' onClick={() => setPopupOpen(true)}>
+                    Enquire Now
+                  </button>
+                </AnimatedBtn>
+
                       </div>
                     ))}
                 </div>
@@ -115,10 +128,10 @@ export default function page() {
                 <AnimatedText tag="h2" text={item.title} />
 
                 <AnimatedBtn delay={0}>
-                  <Link className='common_btn' href={item.slug}>
-                    Explore More
+                  <button className='common_btn' onClick={() => setPopupOpen(true)}>
+                    Enquire Now
                     <Image src="/images/btn_arrow.svg" width={24} height={24} alt='' />
-                  </Link>
+                  </button>
                 </AnimatedBtn>
               </div>
             ))}

@@ -1,93 +1,81 @@
 const ServicesData = [
   {
     service: "Branding",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We create memorable brand identities that build trust, recognition, and lasting customer connections.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Branding", slug: "/" },
-      { image: "/images/project-image.png", title: "Branding", slug: "/" },
-      { image: "/images/project-image.png", title: "Branding", slug: "/" },
+      { image: "/images/branding.png", title: "Branding", slug: "/" }
 
       
     ]
   },
   {
     service: "Podcast",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We produce engaging podcasts that amplify your voice, share your story, and grow your audience.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Podcast", slug: "/" },
-      { image: "/images/project-image.png", title: "Podcast", slug: "/" }
+      { image: "/images/podcast.png", title: "Podcast", slug: "/" }
     ]
   },
   {
     service: "SEO/GEO",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We optimize your online presence to improve visibility, rankings, and local customer discovery.",
     servicesList: [
-      { image: "/images/project-image.png", title: "SEO/GEO", slug: "/" },
-      { image: "/images/project-image.png", title: "SEO/GEO", slug: "/" }
+      { image: "/images/seo-geo.png", title: "SEO/GEO", slug: "/" }
     ]
   },
   {
     service: "UI/UX",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We design intuitive digital experiences that enhance usability, engagement, and customer satisfaction.",
     servicesList: [
-      { image: "/images/project-image.png", title: "UI/UX", slug: "/" },
-      { image: "/images/project-image.png", title: "UI/UX", slug: "/" }
+      { image: "/images/ui-ux.png", title: "UI/UX", slug: "/" }
     ]
   },
   {
     service: "Graphics Design",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We craft visually compelling designs that communicate your message and strengthen your brand.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Graphics Design", slug: "/" },
-      { image: "/images/project-image.png", title: "Graphics Design", slug: "/" }
+      { image: "/images/gd.png", title: "Graphics Design", slug: "/" }
     ]
   },
   {
     service: "Video Production",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We create impactful video content that captures attention, tells stories, and drives engagement.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Video Production", slug: "/" },
-      { image: "/images/project-image.png", title: "Video Production", slug: "/" }
+      { image: "/images/vp.png", title: "Video Production", slug: "/" }
     ]
   },
   {
     service: "Performance Marketing",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We execute data-driven campaigns that maximize reach, conversions, and return on investment.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Performance Marketing", slug: "/" },
-      { image: "/images/project-image.png", title: "Performance Marketing", slug: "/" }
+      { image: "/images/pm.png", title: "Performance Marketing", slug: "/" }
     ]
   },
   {
     service: "Photoshoot",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We deliver professional photography that showcases your brand, products, and services effectively.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Photoshoot", slug: "/" },
-      { image: "/images/project-image.png", title: "Photoshoot", slug: "/" }
+      { image: "/images/photoshoot.png", title: "Photoshoot", slug: "/" }
     ]
   },
   {
     service: "Personal Branding",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We build authentic personal brands that increase credibility, influence, and professional opportunities.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Personal Branding", slug: "/" },
-      { image: "/images/project-image.png", title: "Personal Branding", slug: "/" }
+      { image: "/images/pb.png", title: "Personal Branding", slug: "/" }
     ]
   },
   {
     service: "Social Media Management",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We manage social media strategies that boost engagement, visibility, and audience growth.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Social Media Management", slug: "/" },
-      { image: "/images/project-image.png", title: "Social Media Management", slug: "/" }
+      { image: "/images/smm.png", title: "Social Media Management", slug: "/" }
     ]
   },
   {
     service: "Content Writing",
-    content: "We specialize in building high performing eCommerce websites that are enjoyable and drive sales.",
+    content: "We create compelling content that informs, engages, and converts your target audience.",
     servicesList: [
-      { image: "/images/project-image.png", title: "Content Writing", slug: "/" },
-      { image: "/images/project-image.png", title: "Content Writing", slug: "/" }
+      { image: "/images/cw.png", title: "Content Writing", slug: "/" }
     ]
   }
 ];

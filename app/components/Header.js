@@ -27,7 +27,7 @@ export default function Header() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // 🔥 Scroll logic
+  
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
