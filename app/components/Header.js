@@ -56,7 +56,7 @@ export default function Header() {
         <div className={`container ${style.container}`}>
 
           <Link href="/">
-            <Image src='/images/logo.svg' width={147} height={51} alt='logo'/>
+            <Image src='/images/logo.svg' width={50} height={50} alt='logo'/>
           </Link>
 
           {mobile && 

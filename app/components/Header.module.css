@@ -6,6 +6,8 @@
     padding-bottom: 16px;
 }
 
+
+
 .nav ul{
     display: flex;
     align-items: center;
@@ -208,11 +210,12 @@ letter-spacing: -4%;
     width: 80%;
     position: absolute;
     left: 10%;
-    bottom: 150px;
+    bottom: 100px;
     height: auto;
-    transform: translateY(350px);
+    transform: translateY(50vh);
     animation: showMenuLogo forwards 0.5s ease-in-out;
     animation-delay: 1.5s;
+    opacity: 0.05;
 }
 
 @keyframes showMenuLogo {
